@@ -11,19 +11,13 @@ public class MyProperties {
 	 */
 	private String one;
 
-	/**
-	 * Inner property for prop two.
-	 */
-	private final MyInnerProperties inner = new MyInnerProperties();
+	private final MyInnerProperties myInnerProperties = new MyInnerProperties();
 
-	/**
-	 * Outer property for prop three.
-	 */
 	@NestedConfigurationProperty
 	private final MyOuterProperties outer = new MyOuterProperties();
 
 	public MyInnerProperties getInner() {
-		return this.inner;
+		return this.myInnerProperties;
 	}
 
 	public String getOne() {
@@ -40,6 +34,9 @@ public class MyProperties {
 
 	public static class MyInnerProperties {
 
+		/**
+		 * Property for prop two.
+		 */
 		private String two;
 
 		public String getTwo() {
