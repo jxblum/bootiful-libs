@@ -1,6 +1,7 @@
 package mylib;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 @ConfigurationProperties("my-props")
 public class MyProperties {
@@ -8,6 +9,8 @@ public class MyProperties {
 	private String one;
 
 	private final MyInnerProperties myInnerProperties = new MyInnerProperties();
+
+	@NestedConfigurationProperty
 	private final MyOuterProperties myOuterProperties = new MyOuterProperties();
 
 	public MyInnerProperties getInner() {
