@@ -6,15 +6,24 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 @ConfigurationProperties("my-props")
 public class MyProperties {
 
+	/**
+	 * Property for prop one.
+	 */
 	private String one;
 
-	private final MyInnerProperties myInnerProperties = new MyInnerProperties();
+	/**
+	 * Inner property for prop two.
+	 */
+	private final MyInnerProperties inner = new MyInnerProperties();
 
+	/**
+	 * Outer property for prop three.
+	 */
 	@NestedConfigurationProperty
-	private final MyOuterProperties myOuterProperties = new MyOuterProperties();
+	private final MyOuterProperties outer = new MyOuterProperties();
 
 	public MyInnerProperties getInner() {
-		return this.myInnerProperties;
+		return this.inner;
 	}
 
 	public String getOne() {
@@ -26,7 +35,7 @@ public class MyProperties {
 	}
 
 	public MyOuterProperties getOuter() {
-		return this.myOuterProperties;
+		return this.outer;
 	}
 
 	public static class MyInnerProperties {
