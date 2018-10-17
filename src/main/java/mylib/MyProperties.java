@@ -1,28 +1,41 @@
 package mylib;
 
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-
-@ConfigurationProperties("my-properties")
+@ConfigurationProperties("my-props")
 public class MyProperties {
 
-	private String message;
-	private int id;
+	private String one;
 
-	public String getMessage() {
-		return message;
+	private final MyInnerProperties myInnerProperties = new MyInnerProperties();
+	private final MyOuterProperties myOuterProperties = new MyOuterProperties();
+
+	public MyInnerProperties getInner() {
+		return this.myInnerProperties;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public String getOne() {
+		return this.one;
 	}
 
-	public int getId() {
-		return id;
+	public void setOne(String one) {
+		this.one = one;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public MyOuterProperties getOuter() {
+		return this.myOuterProperties;
+	}
+
+	public static class MyInnerProperties {
+
+		private String two;
+
+		public String getTwo() {
+			return this.two;
+		}
+
+		public void setTwo(String two) {
+			this.two = two;
+		}
 	}
 }

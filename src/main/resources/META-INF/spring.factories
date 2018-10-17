@@ -1,2 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  mylib.MyAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=mylib.MyAutoConfiguration

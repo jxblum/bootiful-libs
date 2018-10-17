@@ -18,6 +18,6 @@ public class MyAutoConfiguration {
 
 	@Bean
 	Foo foo(MyProperties myProperties) {
-		return new Foo(myProperties.getMessage());
+		return new Foo(myProperties.getOne());
 	}
 }
